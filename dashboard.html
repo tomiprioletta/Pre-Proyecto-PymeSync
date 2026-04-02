@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - PymeSync</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body dashboard-page">
+
+  <div class="container dashboard-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>PymeSync</h2>
+        <div class="mode-switch">
+          <button id="btnDarkMode" class="btn-secundario">🌙 Modo Oscuro</button>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item" data-section="inicio">
+            <span class="icon">🏠</span> Inicio
+          </li>
+          <li class="nav-item active" data-section="ventas">
+            <span class="icon">💰</span> Ventas
+          </li>
+          <li class="nav-item" data-section="stock">
+            <span class="icon">📦</span> Stock
+          </li>
+          <li class="nav-item" data-section="pedidos">
+            <span class="icon">🚚</span> Pedidos
+          </li>
+          <li class="nav-item" data-section="clientes">
+            <span class="icon">👥</span> Clientes
+          </li>
+          <li class="nav-item" data-section="chat">
+            <span class="icon">💬</span> Chat Equipo
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="logoutBtn" class="btn-logout">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <h1 id="section-title">Ventas</h1>
+      </header>
+
+      <section id="ventas" class="seccion active">
+        <h2>Registro de Ventas</h2>
+        <div class="card venta-form">
+          <div class="input-group">
+            <select id="ventaProducto">
+              <option value="" disabled selected>Seleccionar producto...</option>
+            </select>
+            <input type="number" id="ventaCantidad" placeholder="Cantidad">
+            <button id="btnVender">Registrar Venta</button>
+          </div>
+        </div>
+
+        <div class="card table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="listaVentas"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="stock" class="seccion">
+        <h2>Gestión de Inventario</h2>
+        <div class="card stock-form">
+          <div class="input-group">
+            <input type="text" id="productoNombre" placeholder="Nombre del producto">
+            <input type="number" id="productoCantidad" placeholder="Cantidad">
+            <button id="btnAgregarProducto">Agregar al Stock</button>
+          </div>
+        </div>
+        <div class="card table-container">
+          <table id="tablaStock">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="listaStock"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="pedidos" class="seccion">
+        <div class="card">Pedidos</div>
+      </section>
+
+      <section id="clientes" class="seccion">
+        <div class="card">Clientes</div>
+      </section>
+
+      <section id="chat" class="seccion">
+        <div class="chat-container">
+          <div id="chat-box" class="chat-box">
+            <p class="msg-sistema">Bienvenido al chat de PymeSync</p>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe un mensaje...">
+            <button id="btn-enviar">Enviar</button>
+          </div>
+        </div>
+      </section>
+      
+      <section id="inicio" class="seccion">
+        <h2>Resumen General</h2>
+        <div class="dashboard"> 
+          <div class="card">
+            <small>Total Productos</small>
+            <h3 id="statTotalProductos">0</h3>
+          </div>
+          <div class="card">
+            <small>Ventas Realizadas</small>
+            <h3 id="statTotalVentas">0</h3>
+          </div>
+          <div class="card" style="border-left: 5px solid #27ae60;">
+            <small>Producto Estrella</small>
+            <h3 id="statProductoMasVendido">-</h3>
+          </div>
+        </div>
+        <div class="card table-container" style="margin-top: 20px;">
+          <h3>Rendimiento por Producto</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Unidades Vendidas</th>
+              </tr>
+            </thead>
+            <tbody id="listaEstadisticas"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+  </div> <div id="ticketVenta" class="ticket-imprimible">
+    <div class="ticket-header">
+      <h1 style="color: black;">PymeSync</h1>
+      <p>Comprobante de Venta</p>
+      <hr>
+    </div>
+    <div id="ticketContenido" class="ticket-body"></div>
+    <div class="ticket-footer">
+      <hr>
+      <p>¡Gracias por su compra!</p>
+      <p id="ticketFecha"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
