@@ -9,7 +9,7 @@ Juntar en un solo lugar la gestión de:
 * Base de datos de Clientes.
 
 ## 🚀 Tecnologías
-*HTML, CSS, JS, etc*
+*HTML, CSS, JS*
 
 ## 🔐 Acceso al Sistema
 Para probar las funcionalidades de **PymeSync**, usa las siguientes credenciales:
