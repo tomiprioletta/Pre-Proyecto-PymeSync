@@ -266,4 +266,6 @@ function renderizarStock() {
     renderizarVentas();
     actualizarEstadisticas();
     actualizarSelectVentas();
+    
+    mostrarSeccion('inicio');
 });
