@@ -10,3 +10,9 @@ Juntar en un solo lugar la gestión de:
 
 ## 🚀 Tecnologías
 *HTML, CSS, JS, etc*
+
+## 🔐 Acceso al Sistema
+Para probar las funcionalidades de **PymeSync**, usa las siguientes credenciales:
+
+* **Usuario:** `admin`
+* **Contraseña:** `1234`
